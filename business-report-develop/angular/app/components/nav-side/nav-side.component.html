@@ -1,0 +1,28 @@
+<div layout-fill flex layout="column">
+    <md-toolbar class="fixed">
+        <div class="md-toolbar-tools">
+            <span>Full Height Test</span>
+            <span flex></span>
+            <md-button ng-click="toggleSidenav()">Toggle Sidenav</md-button>
+            <button type="button" class="navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </md-toolbar>
+    <div layout="row" layout-fill flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z3" md-component-id="nav">
+            <md-subheader>Sidenav</md-subheader>
+            <md-content>
+                <md-button>Hide Sidenav</md-button>
+            </md-content>
+        </md-sidenav>
+        <md-content style="margin-left:30%">
+            <login-form></login-form>
+            <test></test>
+        </md-content>
+    </div>
+</div>

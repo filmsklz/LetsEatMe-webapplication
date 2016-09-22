@@ -1,0 +1,151 @@
+<div class="row">
+
+
+    <div style='padding: 40px;' ng-cloak>
+        <md-content style="height:1000px;">
+            <form name="myForm" ng-submit="vm.save()">
+                <div class="col-md-6">
+                    <md-card style="">
+                        <div class="contentcard">
+                            <h1 class="md-title">TOPIC</h1>
+                            <div layout="row">
+                                <md-input-container>
+                                    <label>topic</label>
+                                    <md-select ng-model="vm.selectedtopicItem" md-selected-text="vm.getSelectedtopicText()"
+                                               style="width:350px;" required>
+                                        <md-optgroup label="topic" style="margin-top:-2%">
+                                            <md-option ng-value="item" ng-repeat="item in vm.topicitems"> {{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard">
+                            <h1 class="md-title">MERCHANT</h1>
+                            <div layout="row">
+                                <md-input-container>
+                                    <label>MERCHANT</label>
+                                    <md-select ng-model="vm.selectedmerchantItem"
+                                               md-selected-text="vm.getSelectedmerchantText()" style="width:350px;" required>
+                                        <md-optgroup label="merchant">
+                                            <md-option ng-value="item" ng-repeat="item in vm.merchantitems">{{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard">
+                            <h1 class="md-title">CAMPAIGN</h1>
+                            <div layout="row">
+                                <md-input-container>
+                                    <label>CAMPAIGN</label>
+                                    <md-select ng-model="vm.selectedcampaignItem"
+                                               md-selected-text="vm.getSelectedcampaignText()" style="width:350px;" required>
+                                        <md-optgroup label="campaign">
+                                            <md-option ng-value="item" ng-repeat="item in vm.campaignitems">{{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard">
+                            <h1 class="md-title">BRANCH</h1>
+                            <div layout="row">
+                                <md-input-container>
+                                    <label>branch</label>
+                                    <md-select ng-model="vm.selectedbranchItem" md-selected-text="vm.getSelectedbranchText()"
+                                               style="width:350px;" required>
+                                        <md-optgroup label="branch">
+                                            <md-option ng-value="item" ng-repeat="item in vm.branchitems">{{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+
+                </div>
+                <div class="col-md-6">
+                    <md-card style="">
+                        <div class="contentcard">
+                            <h1 class="md-title">CUSTOMER INDENTITY</h1>
+                            <div layout="row">
+                                <md-input-container>
+                                    <label>CUSTOMER INDENTITY</label>
+                                    <md-select ng-model="vm.selectedcusidItem" md-selected-text="vm.getSelectedcusidText()"
+                                               style="width:350px;" required>
+                                        <md-optgroup label="cusid">
+                                            <md-option ng-value="item" ng-repeat="item in vm.cusiditems">{{item}}
+                                            </md-option>
+                                        </md-optgroup>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard">
+                            <h1 class="md-title">CREATED DATE</h1>
+                            <div layout="row">
+                                <md-datepicker name="dateField" ng-model="vm.myDate" md-placeholder="Enter date"
+                                               required md-min-date="vm.minDate" md-max-date="vm.maxDate"
+                                ></md-datepicker>
+                                <div class="validation-messages" ng-messages="myForm.dateField.$error">
+                                    <div ng-message="valid">The entered value is not a date!</div>
+                                    <div ng-message="required">This date is required!</div>
+                                    <div ng-message="mindate">Date is too early!</div>
+                                    <div ng-message="maxdate">Date is too late!</div>
+                                    <div ng-message="filtered">Only weekends are allowed!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </md-card>
+
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard">
+                            <h1 class="md-title">CUSTOMER INFO</h1>
+                            <div layout="row">
+                                <md-input-container style="width:350px;" required>
+                                    <label>CUSTOMER INFO</label>
+                                    <input ng-model="vm.cusinfo">
+                                </md-input-container>
+                            </div>
+                        </div>
+                    </md-card>
+                    <md-card style="margin-top:5%">
+                        <div class="contentcard" style="height:150px;margin-top:4%">
+                            <md-radio-group ng-model="data.group1" required  class="col">
+                                <md-radio-button value="TotalSales" class="md-primary" flex>Total Sales</md-radio-button>
+                                <md-radio-button value="Points"  class="md-primary" flex> Points</md-radio-button>
+                            </md-radio-group>
+
+                            <md-input-container style="width:350px;margin-top:-2px;" required>
+                                <label>{{ data.group1 }} </label>
+                                <input ng-model="vm.points" required>
+                            </md-input-container>
+
+                        </div>
+                    </md-card>
+                    <div style="margin-right:-1%;">
+                        <md-button type="submit" ng-disabled="myForm.$invalid" class="md-raised md-primary" layout
+                                   layout-align="center end">Submit
+                        </md-button>
+                    </div>
+                    <div>
+                    </div>
+            </form>
+        </md-content>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+
+<div class="compos">
+    <h2 class="htop">Report Issue</h2>
+    <div style="margin-top: 5%">
+      <form name="myForm" ng-submit="vm.save()">
+        <md-input-container>
+            <label>topic</label>
+            <md-select ng-model="vm.selectedtopicItem" md-selected-text="vm.getSelectedtopicText()"
+                       style="width:350px;" required>
+                <md-optgroup label="topic" style="margin-top:-2%">
+                    <md-option ng-value="item" ng-repeat="item in vm.topicitems"> {{item}}
+                    </md-option>
+                </md-optgroup>
+            </md-select>
+        </md-input-container>
+
+        <md-button type="submit" class="md-primary md-raised">SAVE FORM</md-button>
+      </form>
+    </div>
+</div>

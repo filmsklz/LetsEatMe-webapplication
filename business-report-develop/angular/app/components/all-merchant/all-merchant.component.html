@@ -1,0 +1,23 @@
+<div class="compos">
+    <div class="row">
+        <div style="text-align:center">
+            <h1>MERCHANTS</h1>
+            <p>
+            <li class="glyphicon glyphicon-search"/>
+            <input type="text" ng-model="search.bus_name" style="margin-left:1%"></p>
+        </div>
+        <div style="margin-top:8%">
+            <div class="col-md-4" ng-repeat="x in vm.dataSet|  orderBy:'-bus_id'| filter:search:strict">
+                <div class="thumbnail" style="height:370px">
+                    <img
+                        src="https://s3-ap-southeast-1.amazonaws.com/pro-app-image/business/bus_image_logo_1365958974.jpg"/>
+                    <div class="caption" style="text-align:center;">
+                        <h5>business::{{ x.bus_id }}</h5>
+                        <h3>{{x.bus_status}}</h3>
+                        <p><a href="#/dashboard/{{x.bus_id}}" class="btn-twt" role="button"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
