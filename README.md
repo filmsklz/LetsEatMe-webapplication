@@ -1,5 +1,7 @@
 ## INsTaLL
 
+-First make .env file
+
 -composer install
 
 -npm install -g gulp bower
